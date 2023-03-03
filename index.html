@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 		<title>Ecommerce</title>
 
@@ -27,7 +26,8 @@
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-
+		<!-- Manifest -->
+		<link rel="manifest" href="manifest.json">
 
     </head>
 	<body>
@@ -38,11 +38,10 @@
 				<div class="container">
 					<ul class="header-links pull-left">
 						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> electro@gmail.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 					</ul>
 				</div>
@@ -545,6 +544,25 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+
+		<script>
+			window.addEventListener('load', () => {
+				registerSW();
+			});
+
+			async function registerSW() {
+				if('serviceWorker' in navigator) {
+					try {
+						await navigator
+							.serviceWorker
+							.register('ServiceWorker.js');
+					}
+					catch(e) {
+						alert('ServiceWorker registration failed. Sorry about that.');
+					}
+				}
+			}
+		</script>
 
 	</body>
 </html>

@@ -2160,6 +2160,8 @@ textarea.input {
   }
   .header-logo .logo {
     display: inline-block;
+    height: 30px;
+    
   }
   #product-imgs {
     margin-bottom: 60px;
